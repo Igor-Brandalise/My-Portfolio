@@ -29,6 +29,8 @@ header {
   padding: 1.3em;
   flex-wrap: wrap;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 100%;
+
 }
 
 h1 {
@@ -73,6 +75,7 @@ button {
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
+  
 }
 
 button:hover {
@@ -86,12 +89,77 @@ button:active {
   transform: translateY(-1px);
 }
 
+main{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 3em;
+  padding-right: 1em;
+}
+
+p{
+  text-indent: 5px;
+  margin-block-start: 1em;
+  margin-block-end: 1.2em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  font-size:1.2em ;
+}
+
+#texto{
+  text-align: left;
+  text-align: left;
+
+  max-width: 60vw;
+ 
+  
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 100px;
+}
+
+
+#fotominha{
+  text-align: right;
+}
 
 
 
+footer{
+  display: flex;
+  background-color: (--bg-color);
+  box-shadow: rgba(0, 0, 0, 0.603) 0px 3px 20px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  height: 5em;
+  align-items: center;
+  z-index: 100;
+  
+}
 
+#reserved{
+  flex-grow: 1;
+  text-align: center;
+}
 
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+  }
 
+  #reserved {
+    margin-bottom: 1rem;
+  }
+
+  bottom{
+    font-size: 2px;
+  }
+}
 
 
 .switch {
@@ -100,7 +168,9 @@ button:active {
   display: inline-block;
   width: 3.5em;
   height: 2em;
-}
+  text-align: right;
+
+  }
 
 .switch input {
   opacity: 0;
