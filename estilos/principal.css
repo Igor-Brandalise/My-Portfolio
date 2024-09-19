@@ -105,29 +105,33 @@ p {
 }
 
 #eu {
-  font-size: 1em;
+  font-size: 1.3em;
+  font-weight: 500;
 
 }
 
 #titulos{
   display: flex;
   flex-direction: column ;
+  padding-left: 6.25em;
+  padding-top: 3.5em;
    
 }
 
 .titulo{
-  border-right: 2px solid rgba(255, 255, 255, 0.75);
-  color: rgb(0, 0, 0);
+  border-right: .1em solid rgba(255, 255, 255, 0.75);
+  font-weight: 700;
+  color:purple;
   font-family: "Special Elite", monospace;
   font-size: 2em;
   white-space: nowrap;
   overflow: hidden;
-  
+  padding-left: .5em;
 }
 
 .typing-animation {
-  animation: blinkCursor 2s steps(40) infinite normal,
-    typing 2s steps(30) 1s normal both;
+  animation: blinkCursor .5s steps(30) infinite normal,
+    typing 2.5s steps(30) 0.7s normal both;
 }
 
 @keyframes typing {
@@ -135,7 +139,7 @@ p {
     width: 0;
   }
   to {
-    width: 7.2em;
+    width: 7.55em;
   }
 }
 
@@ -156,7 +160,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding-left: 100px;
+  padding-left: 6.25em;
 }
 
 #fotominha {
