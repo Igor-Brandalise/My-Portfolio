@@ -30,7 +30,6 @@ header {
   flex-wrap: wrap;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   width: 100%;
-
 }
 
 h1 {
@@ -54,8 +53,8 @@ a {
   transition: color 0.8s;
 }
 
-a:hover{
-    color: purple;
+a:hover {
+  color: purple;
 }
 
 #contact {
@@ -75,7 +74,6 @@ button {
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
-  
 }
 
 button:hover {
@@ -89,7 +87,7 @@ button:active {
   transform: translateY(-1px);
 }
 
-main{
+main {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -97,22 +95,63 @@ main{
   padding-right: 1em;
 }
 
-p{
+p {
   text-indent: 5px;
   margin-block-start: 1em;
   margin-block-end: 1.2em;
   margin-inline-start: 0;
   margin-inline-end: 0;
-  font-size:1.2em ;
+  font-size: 1.2em;
 }
 
-#texto{
-  text-align: left;
-  text-align: left;
+#eu {
+  font-size: 1em;
 
-  max-width: 60vw;
- 
+}
+
+#titulos{
+  display: flex;
+  flex-direction: column ;
+   
+}
+
+.titulo{
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  color: rgb(0, 0, 0);
+  font-family: "Special Elite", monospace;
+  font-size: 2em;
+  white-space: nowrap;
+  overflow: hidden;
   
+}
+
+.typing-animation {
+  animation: blinkCursor 2s steps(40) infinite normal,
+    typing 2s steps(30) 1s normal both;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 7.2em;
+  }
+}
+
+@keyframes blinkCursor {
+  from {
+    border-right-color: purple;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+#texto {
+  text-align: left;
+  text-align: left;
+  max-width: 60vw;
   text-align: justify;
   display: flex;
   flex-direction: column;
@@ -120,14 +159,11 @@ p{
   padding-left: 100px;
 }
 
-
-#fotominha{
+#fotominha {
   text-align: right;
 }
 
-
-
-footer{
+footer {
   display: flex;
   background-color: (--bg-color);
   box-shadow: rgba(0, 0, 0, 0.603) 0px 3px 20px;
@@ -137,10 +173,9 @@ footer{
   height: 5em;
   align-items: center;
   z-index: 100;
-  
 }
 
-#reserved{
+#reserved {
   flex-grow: 1;
   text-align: center;
 }
@@ -155,10 +190,7 @@ footer{
   #reserved {
     margin-bottom: 1rem;
   }
-
- 
 }
-
 
 .switch {
   font-size: 17px;
@@ -167,8 +199,7 @@ footer{
   width: 3.5em;
   height: 2em;
   text-align: right;
-
-  }
+}
 
 .switch input {
   opacity: 0;
