@@ -15,12 +15,25 @@ body {
 
 :root {
   --text-color: black;
-  background: rgb(41, 40, 40);
+  background: linear-gradient(200deg, rgba(0, 0, 0, 0.452), rgba(0, 0, 0, 0)),
+    linear-gradient(100deg, rgba(0, 0, 0, 0.582), rgba(20, 20, 20, 0.555)),
+    linear-gradient(300deg, rgba(0, 0, 0, 0.582), rgba(20, 20, 20, 0.555));
+  --stroke-color: rgba(255, 255, 255, 0.438);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
 }
 
 .light {
   --text-color: black;
-  background: rgb(182, 178, 178);
+  background: radial-gradient(ellipse at top, #d67676, transparent),
+    radial-gradient(ellipse at bottom, #451366, transparent),
+    radial-gradient(circle at 10%, rgb(219, 78, 219), transparent),
+    radial-gradient(circle at right, rgb(219, 78, 219), transparent);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
 }
 
 header {
@@ -67,8 +80,9 @@ a:hover {
 button {
   text-transform: uppercase;
   color: #000;
-  background-color: #575555;
-  border: none;
+  background-color: var(--bg-color);
+  border: 1px solid black;
+
   border-radius: 40px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
@@ -107,30 +121,28 @@ p {
 #eu {
   font-size: 1.3em;
   font-weight: 500;
-
 }
 
-#titulos{
+#titulos {
   display: flex;
-  flex-direction: column ;
+  flex-direction: column;
   padding-left: 6.25em;
   padding-top: 3.5em;
-   
 }
 
-.titulo{
-  border-right: .1em solid rgba(255, 255, 255, 0.75);
+.titulo {
+  border-right: 0.1em solid rgba(255, 255, 255, 0.75);
   font-weight: 700;
-  color:purple;
-  font-family: "Special Elite", monospace;
+  color: purple;
+  font-family: "roboto", sans-serif;
   font-size: 2em;
   white-space: nowrap;
   overflow: hidden;
-  padding-left: .5em;
+  padding-left: 0.5em;
 }
 
 .typing-animation {
-  animation: blinkCursor .5s steps(30) infinite normal,
+  animation: blinkCursor 0.5s steps(30) infinite normal,
     typing 2.5s steps(30) 0.7s normal both;
 }
 
@@ -159,7 +171,6 @@ p {
   text-align: justify;
   display: flex;
   flex-direction: column;
-  gap: 5px;
   padding-left: 6.25em;
 }
 
@@ -169,14 +180,13 @@ p {
 
 footer {
   display: flex;
-  background-color: (--bg-color);
-  box-shadow: rgba(0, 0, 0, 0.603) 0px 3px 20px;
+  background-color: var (--bg-color);
   bottom: 0;
   position: fixed;
   width: 100%;
   height: 5em;
   align-items: center;
-  z-index: 100;
+  z-index: 10;
 }
 
 #reserved {
@@ -186,9 +196,10 @@ footer {
 
 @media (max-width: 768px) {
   footer {
+    
     flex-direction: column;
-    padding: 1rem;
-    backdrop-filter: blur(5px);
+    backdrop-filter:blur(10px);
+    width: 100%;
   }
 
   #reserved {
@@ -196,14 +207,18 @@ footer {
   }
 }
 
+
 .switch {
-  font-size: 17px;
+  display: block;
+  --width-of-switch: 3.5em;
+  --height-of-switch: 2em;
+  --size-of-icon: 1.4em;
+  --slider-offset: 0.3em;
   position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
-  text-align: right;
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
 }
+
 
 .switch input {
   opacity: 0;
@@ -211,36 +226,38 @@ footer {
   height: 0;
 }
 
+
 .slider {
-  --background: #414141;
   position: absolute;
   cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--background);
-  transition: 0.5s;
+  background-color: #f4f4f5;
+  transition: .4s;
   border-radius: 30px;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 50%;
-  left: 10%;
-  bottom: 15%;
-  box-shadow: inset 15px -4px 0px 15px #fff000;
-  transition: 0.5s;
+  height: var(--size-of-icon,1.4em);
+  width: var(--size-of-icon,1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset,0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+ transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: rgba(196, 11, 196, 0.685);
+  background-color: #303136;
 }
 
 input:checked + .slider:before {
-  transform: translateX(100%);
-  box-shadow: inset 8px -4px 0px 0px #181717;
+  left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+  background: #303136;
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
 }
