@@ -122,12 +122,14 @@ button:active {
   white-space: nowrap;
   overflow: hidden;
   padding-left: 0.5em;
+  
+
 }
 
 .typing-animation {
   animation: blinkCursor 0.5s steps(30) infinite normal,
     typing 2.5s steps(30) 0.7s normal both;
-}
+  }
 
 @keyframes typing {
   from {
@@ -150,9 +152,10 @@ button:active {
 main {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+ justify-content: space-between;
   padding-top: 3em;
   padding-right: 1em;
+  
 }
 
 #texto {
@@ -185,17 +188,21 @@ p {
 
 #fotominha {
   text-align: right;
+ 
 }
 
 footer {
-  display: flex;
-  background-color: var (--bg-color);
+  height: 3em; /* Define uma altura fixa para o footer */
+  background-color: var(--bg-color);
+  color: #ffffff;
   bottom: 0;
   position: fixed;
   width: 100%;
-  height: 5em;
+  padding: 0 2rem; /* Ajusta o padding lateral */
+  display: flex;
+  justify-content: space-between; /* Espaça os itens igualmente */
   align-items: center;
-  z-index: 100;
+  z-index: 1000;
 }
 
 #reserved {
@@ -204,16 +211,52 @@ footer {
 }
 
 @media (max-width: 768px) {
-  footer {
-    flex-direction: column;
-    backdrop-filter: blur(10px);
+
+header{
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+
+
+  main {
+    
+    flex-direction: column; /* Muda a direção do conteúdo para coluna */
+    align-items: center;
     width: 100%;
+  
   }
 
-  #reserved {
-    margin-bottom: 1rem;
+  #texto {
+    display: grid;
+    grid-template-columns: repeat(4, ); /* Organiza o texto em 4 colunas */
+    flex-direction: column;
+    grid-gap: 1em; /* Espaçamento entre as colunas */
+    width: 100%; /* Faz o texto ocupar 100% da largura */
+    margin: 0;
+    padding: 0; /* Remove o padding lateral em telas menores */
+  }
+
+  #download{
+    text-align: center;
+  }
+
+  #fotominha {
+    width: 100%; /* Faz a imagem ocupar 100% da largura */
+    margin-top: 1.5em; /* Espaçamento acima da imagem */
+    text-align: center;
+  }
+
+  footer {
+    height: 5em;
+    backdrop-filter: blur(5px);
+    flex-direction: column; /* Empilha os itens do footer */
+    padding: 0.5rem; /* Reduz o padding para otimizar o espaço */
   }
 }
+
+
 
 .switch {
   display: block;
