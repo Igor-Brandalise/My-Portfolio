@@ -186,15 +186,15 @@ p {
 }
 
 footer {
-  height: 3em; /* Define uma altura fixa para o footer */
+  height: 3em;
   background-color: var(--bg-color);
   color: #ffffff;
   bottom: 0;
   position: fixed;
   width: 100%;
-  padding: 0 2rem; /* Ajusta o padding lateral */
+  padding: 0 2rem; 
   display: flex;
-  justify-content: space-between; /* Espaça os itens igualmente */
+  justify-content: space-between; 
   align-items: center;
   z-index: 1000;
 }
@@ -216,20 +216,19 @@ header{
 
   main {
     
-    flex-direction: column; /* Muda a direção do conteúdo para coluna */
+    flex-direction: column; 
     align-items: center;
     width: 100%;
-  
   }
 
   #texto {
     display: grid;
-    grid-template-columns: repeat(4, ); /* Organiza o texto em 4 colunas */
+    grid-template-columns: repeat(4, );
     flex-direction: column;
-    grid-gap: 1em; /* Espaçamento entre as colunas */
-    width: 100%; /* Faz o texto ocupar 100% da largura */
+    grid-gap: 1em;
+    width: 100%; 
     margin: 0;
-    padding: 0; /* Remove o padding lateral em telas menores */
+    padding: 0; 
   }
 
   #download{
@@ -237,16 +236,16 @@ header{
   }
 
   #fotominha {
-    width: 100%; /* Faz a imagem ocupar 100% da largura */
-    margin-top: 1.5em; /* Espaçamento acima da imagem */
+    width: 100%; 
+    margin-top: 1.5em;
     text-align: center;
   }
 
   footer {
     height: 5em;
     backdrop-filter: blur(5px);
-    flex-direction: column; /* Empilha os itens do footer */
-    padding: 0.5rem; /* Reduz o padding para otimizar o espaço */
+    flex-direction: column; 
+    padding: 0.5rem; 
   }
 }
 
