@@ -11,6 +11,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: all 0.8s ease color 0.3s;
+  min-height: 90vh;
 }
 
 :root {
@@ -122,14 +123,12 @@ button:active {
   white-space: nowrap;
   overflow: hidden;
   padding-left: 0.5em;
-  
-
 }
 
 .typing-animation {
   animation: blinkCursor 0.5s steps(30) infinite normal,
     typing 2.5s steps(30) 0.7s normal both;
-  }
+}
 
 @keyframes typing {
   from {
@@ -152,10 +151,9 @@ button:active {
 main {
   display: flex;
   align-items: center;
- justify-content: space-between;
+  justify-content: space-between;
   padding-top: 3em;
   padding-right: 1em;
-  
 }
 
 #texto {
@@ -182,13 +180,13 @@ p {
   height: 2.5em;
   padding: 0.5em;
   font-size: 1em;
-  background-color: #303136;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: var(--bg-color);
+ border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.144) 0px 5px 15px;
 }
 
 #fotominha {
   text-align: right;
- 
 }
 
 footer {
@@ -211,52 +209,48 @@ footer {
 }
 
 @media (max-width: 768px) {
+  
 
-header{
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
-}
-
-
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
 
   main {
-    
-    flex-direction: column; /* Muda a direção do conteúdo para coluna */
+    flex-direction: column; 
     align-items: center;
     width: 100%;
-  
   }
 
   #texto {
     display: grid;
-    grid-template-columns: repeat(4, ); /* Organiza o texto em 4 colunas */
+    grid-template-columns: repeat(4); 
     flex-direction: column;
-    grid-gap: 1em; /* Espaçamento entre as colunas */
-    width: 100%; /* Faz o texto ocupar 100% da largura */
+    grid-gap: .5em; 
+    width: 100%; 
     margin: 0;
-    padding: 0; /* Remove o padding lateral em telas menores */
+    padding: 0; 
   }
 
-  #download{
+  #download {
     text-align: center;
   }
 
   #fotominha {
-    width: 100%; /* Faz a imagem ocupar 100% da largura */
-    margin-top: 1.5em; /* Espaçamento acima da imagem */
+    width: 100%; 
+    margin-top: 1.5em; 
     text-align: center;
+    
   }
 
   footer {
     height: 5em;
     backdrop-filter: blur(5px);
-    flex-direction: column; /* Empilha os itens do footer */
-    padding: 0.5rem; /* Reduz o padding para otimizar o espaço */
+    flex-direction: column;
+    padding: 0.5rem;
   }
 }
-
-
 
 .switch {
   display: block;
