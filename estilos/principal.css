@@ -191,15 +191,15 @@ p {
 }
 
 footer {
-  height: 3em; /* Define uma altura fixa para o footer */
+  height: 3em; 
   background-color: var(--bg-color);
   color: #ffffff;
   bottom: 0;
   position: fixed;
   width: 100%;
-  padding: 0 2rem; /* Ajusta o padding lateral */
+  padding: 0 2rem;
   display: flex;
-  justify-content: space-between; /* Espaça os itens igualmente */
+  justify-content: space-between; 
   align-items: center;
   z-index: 1000;
 }
@@ -209,7 +209,25 @@ footer {
   text-align: center;
 }
 
-@media (max-width: 768px) {
+
+
+@media(max-width: 960px){
+  #foto{
+    height: 300px;
+    width: 300px;
+  }
+
+  
+}
+
+@media(max-width: 805px){
+  #foto{
+ padding-left: 1em;
+  }
+}
+
+
+@media (max-width: 780px) {
   header {
     flex-direction: column;
     align-items: center;
@@ -220,6 +238,11 @@ footer {
     flex-direction: column;
     align-items: center;
     width: 100%;
+  }
+
+  p{
+    width: 100%;
+  
   }
 
   #texto {
@@ -236,18 +259,23 @@ footer {
     text-align: center;
   }
 
+  footer {
+    height: 5em;
+    backdrop-filter: blur(5px);
+    flex-direction: column;
+    padding: 0.5rem;
+    z-index: 100;
+    background-color: transparent;
+    
+  }
+  
   #fotominha {
     width: 100%;
     margin-top: 1.5em;
     text-align: center;
   }
 
-  footer {
-    height: 5em;
-    backdrop-filter: blur(5px);
-    flex-direction: column;
-    padding: 0.5rem;
-  }
+
 }
 
 .switch {
